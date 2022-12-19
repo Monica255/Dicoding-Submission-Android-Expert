@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RandomNews"
+        tools:replace="android:allowBackup"
         tools:node="replace">
         <activity
             android:name=".ui.home.HomeActivity"
