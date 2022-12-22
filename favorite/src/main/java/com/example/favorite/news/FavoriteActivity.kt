@@ -17,7 +17,8 @@ import javax.inject.Inject
 
 
 class FavoriteActivity : AppCompatActivity() {
-    private lateinit var binding:ActivityFavoriteBinding
+    private var _binding:ActivityFavoriteBinding?=null
+    private val binding get()= _binding!!
     @Inject
     lateinit var fac:ViewModelFactory
     private val viewModel: FavoriteViewModel by viewModels { fac }
@@ -33,7 +34,7 @@ class FavoriteActivity : AppCompatActivity() {
             .build()
             .inject(this)
         super.onCreate(savedInstanceState)
-        binding=ActivityFavoriteBinding.inflate(layoutInflater)
+        _binding=ActivityFavoriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setToolbar()
 
@@ -73,5 +74,10 @@ class FavoriteActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.title = ""
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding=null
     }
 }

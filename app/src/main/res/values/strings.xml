@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">RandomNews</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="menu_fav">Menu Favorite</string>
     <string name="something_wrong">Something wrong</string>
     <string name="news">News</string>
     <string name="image_news">Image News</string>
     <string name="title_favorite">Favorite Feature</string>
     <string name="logo_aplikasi">Logo Aplikasi</string>
+    <string name="power_connected">Power connected!</string>
+    <string name="power_disconnected">Power disconnected!</string>
 </resources>

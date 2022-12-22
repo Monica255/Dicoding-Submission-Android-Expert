@@ -9,10 +9,11 @@ import com.example.randomnews.databinding.ActivitySplashBinding
 import com.example.randomnews.ui.home.HomeActivity
 
 class SplashActivity : AppCompatActivity() {
-    private lateinit var binding:ActivitySplashBinding
+    private var _binding:ActivitySplashBinding?=null
+    private val binding get() = _binding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivitySplashBinding.inflate(layoutInflater)
+        _binding=ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
         Handler(Looper.getMainLooper()).postDelayed({
 
@@ -21,6 +22,11 @@ class SplashActivity : AppCompatActivity() {
         }, DELAY_TIME)
     }
 
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding=null
+    }
 
     companion object {
         const val DELAY_TIME: Long = 2_000

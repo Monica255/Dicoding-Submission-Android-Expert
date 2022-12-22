@@ -10,10 +10,11 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
-    private lateinit var binding:ActivityDetailBinding
+    private var _binding:ActivityDetailBinding?=null
+    private val binding get() = _binding!!
     private val viewModel:DetailViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding=ActivityDetailBinding.inflate(layoutInflater)
+        _binding=ActivityDetailBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setToolbar()
@@ -48,6 +49,11 @@ class DetailActivity : AppCompatActivity() {
                 viewModel.setFavoriteTourism(data,state)
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding=null
     }
 
     companion object{
