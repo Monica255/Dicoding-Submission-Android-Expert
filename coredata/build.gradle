@@ -21,11 +21,13 @@ android {
 
     buildTypes {
         release {
-            buildConfigField "String", "BASEURL", "\"https://inshorts.deta.dev/\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASEURL", "\"https://inshorts.deta.dev/\""
         }
         debug{
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BASEURL", "\"https://inshorts.deta.dev/\""
         }
     }
