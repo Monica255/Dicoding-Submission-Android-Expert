@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import org.jetbrains.annotations.NotNull
 
 @Entity(tableName = "news")
-class NewsEntity (
+data class NewsEntity (
     @PrimaryKey
     @NotNull
     @ColumnInfo(name = "newsId")
